@@ -1,0 +1,117 @@
+﻿GameLogic-->socket.io
+
+1 定义棋盘大小
+
+return {	
+            //棋盘行数
+	    row:number,
+	    //棋盘列数
+        col:number
+};
+
+
+2 判断输赢
+
+params:{
+	
+	data：[
+		{
+	           //棋子颜色
+		  color:number
+		//棋子的坐标数组
+		posArr:[
+			{
+				//X轴坐标
+				x:number，
+		       		//Y轴坐标
+				y:number
+.
+			},
+				.
+				.
+				.	
+		]				
+	       },
+	      {
+	           //棋子颜色
+		  color:number
+		//棋子的坐标数组
+		posArr:[
+			{
+				//X轴坐标
+				x:number，
+		       		//Y轴坐标
+				y:number
+.
+			},	.
+				.
+				.	
+		]				
+	       }
+	]
+}
+return color:number //赢方棋子颜色
+//前段部分
+3下棋
+req:
+
+onputChess:{
+	type:"play"，
+	x:num,
+	y:num,
+	color:num
+}
+res:
+onputChess:{
+	type:"play"
+	x:num,
+	y:num,
+	color:num
+}
+4玩家登陆名
+
+req:
+
+play:{
+	type:"enter"，
+	name:string
+}
+
+res:
+play:{
+	type:"enter",
+        color:num
+}
+5 等待其他玩家
+
+data:{
+	type:"wait"
+}
+res
+5 两名玩家登录，游戏开始
+req:
+
+data:{
+	type:"startGame",
+	row: number,
+	col: number
+}
+6 推送胜利&失败消息
+req:
+
+winner:{
+	type:"end",
+	color:num(0 || 1)
+}
+7 落子位置是否有棋子
+error:{
+	type:"error"
+}
+8 玩家离开
+res:
+data:{
+	type:"leave",
+	name:leavename
+}
+
+// color:0为黑色，1为白色
