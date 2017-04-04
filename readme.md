@@ -1,3 +1,1 @@
-# myapp
-
-##五子棋
+# wuziqi-mars
