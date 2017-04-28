@@ -1,6 +1,4 @@
-/**
- * Created by hxsd on 2016/11/11.
- */
+
 var http = require("http");
 var path = require("path");
 var express = require("express");

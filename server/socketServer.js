@@ -1,52 +1,8 @@
-/**
- * Created by xinliwei on 2016-12-09 0009.
- *
- * 消息的类型：
- *      客服发送的消息：需要发给指定的目标客户
- *      客户发送的消息：需要发给客服
- *
- * 定义好消息的格式：
- * 1. 客户可以会发送的咨询信息：
- * {
- *    type: "咨询",
- *    nickname: "小神仙",
- *    msg: "您好，神仙水什么时候到货?"
- * }
- * 2. 客服可能会回复的消息：
- * {
- *    type: "客服",
- *    nickname: "京东客服",
- *    msg: "您好，您咨询的商品，月底到货。"
- * }
- *
- * 客户端和服务器之间的数据传送格式我们采用json
- socket.io会自动将json转为js对象
- Socket.io 的发送对象范围：
- 向当前客户端发送事件
- socket.emit('login', {
-          numUsers: numUsers
-        });
- 广播（不包含当前客户端）
- socket.broadcast.emit('new message', {
-          username: socket.username,
-          message: data
-        });
- 广播（且包含当前客户端）
- io.sockets.emit('message', "this is a test");
- 在房间广播（不包含当前客户端）
- socket.broadcast.to('game').emit('message', 'nice game');
- 在房间广播（包含当前客户端）
- io.sockets.in('game').emit('message', 'cool game');
- 发送给指定客户端
- io.sockets.sockets[socketid].emit('message', 'for your eyes only');
- 就可以向一个特定用户推送消息，但是如何获得这个socketId，就是生成一个哈希数组，key为username，
- 值为socket.id，这样就可以通过用户名获取对应的id，进而可以向特定client推送消息。
- */
+
 // 引入socket.io模块
 var socketIO = require("socket.io");
 var game = require("./game");
 var config=require("./gameConfig");
-
 
 module.exports = function (httpServer) {
     // 让socket.io监听web服务器，并返回socket.io服务器
