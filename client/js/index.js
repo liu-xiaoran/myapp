@@ -13,7 +13,7 @@
     var handler = App.prototype;
 
     handler.init = function(){
-        var so = this.so = io('ws://172.0.0.1:3000');
+        var so = this.so = io('ws://localhost:3000');
         
     };
 
