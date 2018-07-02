@@ -117,7 +117,7 @@ $(function(){
     container = $('#game');
     var app = new App();
 
-    var username = app.username = 'tongjinle'+ Math.floor(Math.random()*10000);
+    var username = app.username = 'liuxiaoran'+ Math.floor(Math.random()*10000);
     app.act('user.enter',{username:username});
 
 

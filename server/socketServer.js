@@ -73,12 +73,6 @@ module.exports = function (httpServer) {
             } 
         });
 
-        // 向客户端发送消息:
-        // 有两个方法：send-发送的是默认叫做"message"的消息,
-        //             emit-发送自定义名称的消息
-        // 以下方法的两个参数：参数1:消息名称;参数2:消息内容
-        //socket.emit("hello","欢迎您，新朋友!");
-
         // 服务器socket监听客户端发过来的消息
         
 
